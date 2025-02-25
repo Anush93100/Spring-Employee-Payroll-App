@@ -1,10 +1,9 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 7
-   Use Lombok Library for Logging
-   Note: using Annotation @Slf4j at Class Level, Logging is activated
-   Note: Logging Levels, Files and Patterns are handled in application.properties
+   Use Case : 8
+   Configure Logging profiles
+   created application-prod.properties and application-dev.properties
    Database is not used.
 */
 
