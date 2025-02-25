@@ -1,8 +1,10 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 6
-   ADD Lombok Library to auto generate getters and setters for the DTO.
+   Use Case : 7
+   Use Lombok Library for Logging
+   Note: using Annotation @Slf4j at Class Level, Logging is activated
+   Note: Logging Levels, Files and Patterns are handled in application.properties
    Database is not used.
 */
 
