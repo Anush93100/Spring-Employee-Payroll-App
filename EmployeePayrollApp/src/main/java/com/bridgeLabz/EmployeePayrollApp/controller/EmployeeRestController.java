@@ -1,10 +1,8 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 5
-   This is Rest Controller file to ensure that data is transmitted in REST calls.
-   Ability for the Services Layer to store the Employee Payroll Data
-   In this use case the Services Layer will store this Data in a Memory as a List.
+   Use Case : 6
+   ADD Lombok Library to auto generate getters and setters for the DTO.
    Database is not used.
 */
 
@@ -12,9 +10,7 @@ import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
 import com.bridgeLabz.EmployeePayrollApp.model.Employee;
 import com.bridgeLabz.EmployeePayrollApp.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
