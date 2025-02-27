@@ -1,11 +1,11 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 10
-   Adding Validation to Name Field(EmployeeDTO) so the REST call can be validated
-   - To begin with make it a required field i.e. a not empty field (@NotBlank)
-   - Then add pattern to it. (@Pattern)
-   - The Validation needs to be done for both Create and Update REST Calls. (using @Valid on @RequestBody)
+   Use Case : 11
+   Provide User Friendly Error Response in case validation fails.
+   - Created Custom GlobalExceptionHandler class using @RestControllerAdvice Annotation so that Spring
+     Framework can call this class to handle Exceptions thrown during processing REST API Request.
+   - Added @ExceptionHandler for MethodArgumentNotValidException.
 */
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
