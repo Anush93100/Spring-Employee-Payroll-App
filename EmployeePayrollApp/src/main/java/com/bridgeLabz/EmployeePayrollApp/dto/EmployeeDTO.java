@@ -16,6 +16,6 @@ public class EmployeeDTO {
     @Pattern(regexp = "^[A-Za-z ]{3,50}$", message = "Name must contain only letters and spaces (3-50 characters).")
     private String name;
 
-    @Min(value = 500,message = "Min wage should be more than 500")
+    @Min(value = 500, message = "Min wage should be more than 500")
     private double salary;
 }
