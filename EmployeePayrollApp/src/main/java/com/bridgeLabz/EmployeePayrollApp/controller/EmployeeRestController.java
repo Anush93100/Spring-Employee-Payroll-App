@@ -1,10 +1,9 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 8
-   Configure Logging profiles
-   created application-prod.properties and application-dev.properties
-   Database is not used.
+   Use Case : 9
+   Database setting as Environment Variable
+   Open the MySQL Client and run the script to set up DB, User and Priviledges.
 */
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
