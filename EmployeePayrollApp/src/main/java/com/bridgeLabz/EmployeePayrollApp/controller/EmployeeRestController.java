@@ -1,11 +1,10 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 11
-   Provide User Friendly Error Response in case validation fails.
-   - Created Custom GlobalExceptionHandler class using @RestControllerAdvice Annotation so that Spring
-     Framework can call this class to handle Exceptions thrown during processing REST API Request.
-   - Added @ExceptionHandler for MethodArgumentNotValidException.
+   Use Case : 12
+   Ability to throw User Friendly Errors in case Employee Id is not found in Employee Payroll App.
+   - Define a Custom Exception for Employee Not Found and through when Employee Id is passed as parameter.
+   - Handle such Exceptions in @ExceptionHandler method for EmployeeNotException class.
 */
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
