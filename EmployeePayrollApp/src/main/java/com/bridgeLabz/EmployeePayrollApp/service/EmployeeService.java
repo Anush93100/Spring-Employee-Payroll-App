@@ -1,6 +1,7 @@
 package com.bridgeLabz.EmployeePayrollApp.service;
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
+import com.bridgeLabz.EmployeePayrollApp.exception.EmployeeNotFoundException;
 import com.bridgeLabz.EmployeePayrollApp.model.Employee;
 import org.springframework.stereotype.Service;
 
@@ -21,12 +22,10 @@ public class EmployeeService {
     }
 
     public Employee getEmployeeDetailsByID(long id) {
-        for(Employee e:employees){
-            if(e.getId()==id){
-                return e;
-            }
-        }
-        return null;
+        return employees.stream()
+                .filter(e -> e.getId() == id)
+                .findFirst()
+                .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     public Employee createEmployeeRecord(EmployeeDTO employeeDTO){
@@ -44,9 +43,7 @@ public class EmployeeService {
 
     public Employee updateEmployeeRecord(long id,EmployeeDTO employeeDTO) {
             Employee employee = getEmployeeDetailsByID(id);
-            if(employee==null){
-                return null;
-            }
+
             String name = employeeDTO.getName();
             double salary = employeeDTO.getSalary();
 
@@ -61,17 +58,14 @@ public class EmployeeService {
 
     public String deleteEmployeeRecordByID(long id) {
         Employee employee = getEmployeeDetailsByID(id);
-        if (employee == null) {
-            return "Employee record not found";
-        }
-        else{
-            for(int i=0;i<employees.size();i++){
-                if(employees.get(i)==employee){
-                    employees.remove(i);
-                    return "Deleted Employee record with id " + id;
-                }
+
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i) == employee) {
+                employees.remove(i);
+                return "Deleted Employee record with id " + id;
             }
         }
+
         return "Employee record not found";
     }
 

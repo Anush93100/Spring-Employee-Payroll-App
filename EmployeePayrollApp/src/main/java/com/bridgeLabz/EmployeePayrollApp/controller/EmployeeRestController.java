@@ -16,7 +16,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/employeePayrollService")
@@ -31,13 +30,8 @@ public class EmployeeRestController {
     }
 
     @GetMapping("/get/{id}")
-    public Optional<Employee> getSpecificEmployeeDetails(@PathVariable long id) {
-        Employee employee = employeeService.getEmployeeDetailsByID(id);
-        if (employee != null) {
-            return Optional.of(employee);
-        } else {
-            return Optional.empty();
-        }
+    public Employee getSpecificEmployeeDetails(@PathVariable long id) {
+        return employeeService.getEmployeeDetailsByID(id);
     }
 
     @PostMapping("/create")
@@ -47,13 +41,8 @@ public class EmployeeRestController {
     }
 
     @PutMapping("/update/{id}")
-    public String updatingEmployeeDetails(@PathVariable long id, @Valid @RequestBody EmployeeDTO employeeDTO) {
-        Employee employee = employeeService.updateEmployeeRecord(id, employeeDTO);
-        if (employee != null) {
-            return "Updated employee record\nname = " + employee.getName() + "\nsalary = " + employee.getSalary();
-        } else {
-            return "Employee record not found";
-        }
+    public Employee updatingEmployeeDetails(@PathVariable long id, @Valid @RequestBody EmployeeDTO employeeDTO) {
+        return employeeService.updateEmployeeRecord(id, employeeDTO);
     }
 
     @DeleteMapping("/delete/{id}")
