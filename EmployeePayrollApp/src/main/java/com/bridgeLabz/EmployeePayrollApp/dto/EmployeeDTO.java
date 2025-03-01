@@ -6,10 +6,15 @@ import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class EmployeeDTO {
 
     @NotBlank(message = "Name is required and cannot be empty.")
@@ -18,4 +23,10 @@ public class EmployeeDTO {
 
     @Min(value = 500, message = "Min wage should be more than 500")
     private double salary;
+
+    private String gender;
+    private LocalDate startDate;
+    private String note;
+    private String profilePic;
+    private List<String> departments;
 }

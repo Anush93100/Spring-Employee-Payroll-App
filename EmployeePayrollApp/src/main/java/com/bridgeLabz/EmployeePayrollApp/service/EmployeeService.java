@@ -12,6 +12,7 @@ import java.util.List;
 public class EmployeeService {
 
     List<Employee> employees;
+    private static long empID=1;
 
     EmployeeService(){
         employees=new ArrayList<>();
@@ -23,20 +24,14 @@ public class EmployeeService {
 
     public Employee getEmployeeDetailsByID(long id) {
         return employees.stream()
-                .filter(e -> e.getId() == id)
+                .filter(e -> e.getEmployeeId() == id)
                 .findFirst()
                 .orElseThrow(() -> new EmployeeNotFoundException(id));
     }
 
     public Employee createEmployeeRecord(EmployeeDTO employeeDTO){
-        Employee employee=new Employee();
-
-        String name=employeeDTO.getName();
-        double salary=employeeDTO.getSalary();
-
-        employee.setName(name);
-        employee.setSalary(salary);
-
+        Employee employee=new Employee(empID,employeeDTO);
+        empID++;
         employees.add(employee);
         return employee;
     }

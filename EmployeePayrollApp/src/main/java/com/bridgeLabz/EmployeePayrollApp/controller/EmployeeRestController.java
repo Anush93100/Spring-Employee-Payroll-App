@@ -1,10 +1,9 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 12
-   Ability to throw User Friendly Errors in case Employee Id is not found in Employee Payroll App.
-   - Define a Custom Exception for Employee Not Found and through when Employee Id is passed as parameter.
-   - Handle such Exceptions in @ExceptionHandler method for EmployeeNotException class.
+   Use Case : 13
+   Adding remaining properties to the Payroll EmployeeDTO and Model
+   - Here we add gender, startDate, note, profilePic and department
 */
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
@@ -34,9 +33,8 @@ public class EmployeeRestController {
     }
 
     @PostMapping("/create")
-    public String creatingEmployeeRecord(@Valid @RequestBody EmployeeDTO employeeDTO){
-        Employee employee=employeeService.createEmployeeRecord(employeeDTO);
-        return "Created employee record\nname = " + employee.getName() + "\nsalary = " + employee.getSalary();
+    public Employee creatingEmployeeRecord(@Valid @RequestBody EmployeeDTO employeeDTO){
+        return employeeService.createEmployeeRecord(employeeDTO);
     }
 
     @PutMapping("/update/{id}")
