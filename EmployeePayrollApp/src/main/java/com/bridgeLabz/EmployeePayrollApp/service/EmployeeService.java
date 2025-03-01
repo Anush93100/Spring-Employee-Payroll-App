@@ -3,12 +3,14 @@ package com.bridgeLabz.EmployeePayrollApp.service;
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
 import com.bridgeLabz.EmployeePayrollApp.exception.EmployeeNotFoundException;
 import com.bridgeLabz.EmployeePayrollApp.model.Employee;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@Slf4j
 public class EmployeeService {
 
     List<Employee> employees;
