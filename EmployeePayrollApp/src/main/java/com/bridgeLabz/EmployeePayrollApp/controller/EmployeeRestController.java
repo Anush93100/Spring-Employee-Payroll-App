@@ -1,11 +1,10 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 14
-   Ability to save Employee Payroll Data to MySQL DB
-   -@Entity Annotation tells Hibernate to create a table out of the Employee Payroll Class
-   - Create a Repository Interface to hold Employee Payroll Records. Spring automatically implements
-     this repository interface
+   Use Case : 16
+   Ability to develop rest of the CRUD Service Methods with MySQL Database
+   - Note: This includes all the CRUD operations of getting all data, getting specific employee
+     data, updating the employee payroll data and finally deleting it.
 */
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;

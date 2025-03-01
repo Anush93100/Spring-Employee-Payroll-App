@@ -33,12 +33,16 @@ public class Employee {
     public Employee() { }
 
     public Employee(EmployeeDTO employeeDTO){
-       this.name=employeeDTO.getName();
-       this.salary=employeeDTO.getSalary();
-       this.gender=employeeDTO.getGender();
-       this.startDate=employeeDTO.getStartDate();
-       this.note=employeeDTO.getNote();
-       this.profilePic=employeeDTO.getProfilePic();
-       this.departments=employeeDTO.getDepartments();
+      this.updateEmployeeData(employeeDTO);
+    }
+
+    public void updateEmployeeData(EmployeeDTO employeeDTO){
+        this.name=employeeDTO.getName();
+        this.salary=employeeDTO.getSalary();
+        this.gender=employeeDTO.getGender();
+        this.startDate=employeeDTO.getStartDate();
+        this.note=employeeDTO.getNote();
+        this.profilePic=employeeDTO.getProfilePic();
+        this.departments=employeeDTO.getDepartments();
     }
 }

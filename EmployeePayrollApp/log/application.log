@@ -968,3 +968,92 @@ Caused by: java.sql.SQLException: Access denied for user 'payrolluser'@'%'@'loca
 	at org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl.getIsolatedConnection(DdlTransactionIsolatorNonJtaImpl.java:46) ~[hibernate-core-6.6.8.Final.jar:6.6.8.Final]
 	... 43 common frames omitted
 
+2025-03-01T13:32:28.320+05:30  INFO 2196 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 22 with PID 2196 (C:\Capgemini_Employee-Payroll-App\EmployeePayrollApp\target\classes started by ayush tenguriya in C:\Capgemini_Employee-Payroll-App\EmployeePayrollApp)
+2025-03-01T13:32:28.324+05:30 DEBUG 2196 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-01T13:32:28.326+05:30  INFO 2196 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : The following 1 profile is active: "dev"
+2025-03-01T13:32:32.986+05:30  WARN 2196 --- [EmployeePayrollApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01T13:32:33.303+05:30  WARN 2196 --- [EmployeePayrollApp] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-01T13:32:33.480+05:30  INFO 2196 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 5.801 seconds (process running for 6.353)
+2025-03-01T13:32:33.483+05:30  INFO 2196 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Employee Payroll App Started in DEV Environment
+2025-03-01T13:32:33.485+05:30  INFO 2196 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Employee Payroll DB User is root 
+2025-03-01T13:35:53.349+05:30  WARN 2196 --- [EmployeePayrollApp] [http-nio-8080-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [1] in public com.bridgeLabz.EmployeePayrollApp.model.Employee com.bridgeLabz.EmployeePayrollApp.controller.EmployeeRestController.updatingEmployeeDetails(long,com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO) with 3 errors: [Field error in object 'employeeDTO' on field 'startDate': rejected value [null]; codes [NotNull.employeeDTO.startDate,NotNull.startDate,NotNull.java.time.LocalDate,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.startDate,startDate]; arguments []; default message [startDate]]; default message [startDate should Not be empty]] [Field error in object 'employeeDTO' on field 'note': rejected value [null]; codes [NotBlank.employeeDTO.note,NotBlank.note,NotBlank.java.lang.String,NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.note,note]; arguments []; default message [note]]; default message [Note cannot be Empty]] [Field error in object 'employeeDTO' on field 'departments': rejected value [null]; codes [NotNull.employeeDTO.departments,NotNull.departments,NotNull.java.util.List,NotNull]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.departments,departments]; arguments []; default message [departments]]; default message [department should not be Empty]] ]
+2025-03-01T13:37:05.587+05:30 ERROR 2196 --- [EmployeePayrollApp] [http-nio-8080-exec-3] c.b.E.exception.GlobalExceptionHandler   : Invalid Date format 
+
+org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:409) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.read(AbstractJackson2HttpMessageConverter.java:357) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.readWithMessageConverters(AbstractMessageConverterMethodArgumentResolver.java:204) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.readWithMessageConverters(RequestResponseBodyMethodProcessor.java:176) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:150) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:226) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:180) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1088) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.3.jar:6.2.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.36.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.3.jar:6.2.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.36.jar:10.1.36]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+Caused by: com.fasterxml.jackson.core.JsonParseException: Unexpected character ('}' (code 125)): was expecting double-quote to start field name
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 9, column: 1]
+	at com.fasterxml.jackson.core.JsonParser._constructReadException(JsonParser.java:2660) ~[jackson-core-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.core.base.ParserMinimalBase._reportUnexpectedChar(ParserMinimalBase.java:741) ~[jackson-core-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._handleOddName(UTF8StreamJsonParser.java:2103) ~[jackson-core-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser._parseName(UTF8StreamJsonParser.java:1753) ~[jackson-core-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.core.json.UTF8StreamJsonParser.nextFieldName(UTF8StreamJsonParser.java:1040) ~[jackson-core-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:406) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:185) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.deser.DefaultDeserializationContext.readRootValue(DefaultDeserializationContext.java:342) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2125) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1501) ~[jackson-databind-2.18.2.jar:2.18.2]
+	at org.springframework.http.converter.json.AbstractJackson2HttpMessageConverter.readJavaType(AbstractJackson2HttpMessageConverter.java:398) ~[spring-web-6.2.3.jar:6.2.3]
+	... 51 common frames omitted
+
+2025-03-01T13:37:05.609+05:30  WARN 2196 --- [EmployeePayrollApp] [http-nio-8080-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character ('}' (code 125)): was expecting double-quote to start field name]
+2025-03-01T13:40:46.173+05:30  INFO 8624 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Starting EmployeePayrollAppApplication using Java 22 with PID 8624 (C:\Capgemini_Employee-Payroll-App\EmployeePayrollApp\target\classes started by ayush tenguriya in C:\Capgemini_Employee-Payroll-App\EmployeePayrollApp)
+2025-03-01T13:40:46.178+05:30 DEBUG 8624 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Running with Spring Boot v3.4.3, Spring v6.2.3
+2025-03-01T13:40:46.179+05:30  INFO 8624 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : The following 1 profile is active: "dev"
+2025-03-01T13:40:52.706+05:30  WARN 8624 --- [EmployeePayrollApp] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-01T13:40:53.200+05:30  WARN 8624 --- [EmployeePayrollApp] [restartedMain] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2025-03-01T13:40:53.448+05:30  INFO 8624 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Started EmployeePayrollAppApplication in 8.888 seconds (process running for 10.037)
+2025-03-01T13:40:53.456+05:30  INFO 8624 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Employee Payroll App Started in DEV Environment
+2025-03-01T13:40:53.457+05:30  INFO 8624 --- [EmployeePayrollApp] [restartedMain] c.b.E.EmployeePayrollAppApplication      : Employee Payroll DB User is root 
+2025-03-01T13:41:09.735+05:30  WARN 8624 --- [EmployeePayrollApp] [http-nio-8080-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.bind.MethodArgumentNotValidException: Validation failed for argument [0] in public com.bridgeLabz.EmployeePayrollApp.model.Employee com.bridgeLabz.EmployeePayrollApp.controller.EmployeeRestController.creatingEmployeeRecord(com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO): [Field error in object 'employeeDTO' on field 'name': rejected value [raj chandanan]; codes [Pattern.employeeDTO.name,Pattern.name,Pattern.java.lang.String,Pattern]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [employeeDTO.name,name]; arguments []; default message [name],[Ljakarta.validation.constraints.Pattern$Flag;@5c30419c,^[A-Z]{1}[a-zA-Z\s]{2,}$]; default message [Name must contain only letters and spaces (3-50 characters).]] ]
