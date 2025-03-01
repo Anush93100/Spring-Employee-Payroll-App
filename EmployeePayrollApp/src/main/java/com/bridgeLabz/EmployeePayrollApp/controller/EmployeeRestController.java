@@ -1,10 +1,9 @@
 package com.bridgeLabz.EmployeePayrollApp.controller;
 
 /*
-   Use Case : 16
-   Ability to develop rest of the CRUD Service Methods with MySQL Database
-   - Note: This includes all the CRUD operations of getting all data, getting specific employee
-     data, updating the employee payroll data and finally deleting it.
+   Use Case : 17
+   Ability to retrieve all the records of employee payroll pertaining to sales department
+   - Note: Use Custom Query using annotation @Query to retrieve employee of sales department
 */
 
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
@@ -33,6 +32,11 @@ public class EmployeeRestController {
     @GetMapping("/get/{id}")
     public Employee getSpecificEmployeeDetails(@PathVariable long id) {
         return employeeService.getEmployeeDetailsByID(id);
+    }
+
+    @GetMapping("/department/{department}")
+    public List<Employee> getEmployeeByDepartment(@PathVariable("department") String department) {
+        return employeeService.getEmployeeByDepartment(department);
     }
 
     @PostMapping("/create")
