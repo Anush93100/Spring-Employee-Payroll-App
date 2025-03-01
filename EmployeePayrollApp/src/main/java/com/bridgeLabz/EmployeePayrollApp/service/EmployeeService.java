@@ -3,7 +3,9 @@ package com.bridgeLabz.EmployeePayrollApp.service;
 import com.bridgeLabz.EmployeePayrollApp.dto.EmployeeDTO;
 import com.bridgeLabz.EmployeePayrollApp.exception.EmployeeNotFoundException;
 import com.bridgeLabz.EmployeePayrollApp.model.Employee;
+import com.bridgeLabz.EmployeePayrollApp.repository.EmployeeRepository;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -13,8 +15,10 @@ import java.util.List;
 @Slf4j
 public class EmployeeService {
 
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
     List<Employee> employees;
-    private static long empID=1;
 
     EmployeeService(){
         employees=new ArrayList<>();
@@ -32,9 +36,9 @@ public class EmployeeService {
     }
 
     public Employee createEmployeeRecord(EmployeeDTO employeeDTO){
-        Employee employee=new Employee(empID,employeeDTO);
-        empID++;
+        Employee employee=new Employee(employeeDTO);
         employees.add(employee);
+        employeeRepository.save(employee);
         return employee;
     }
 
